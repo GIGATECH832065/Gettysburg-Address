@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gettysburg Address</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background-color: black;
+            color: white;
+            font-family: "Old English Text MT", cursive, serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+        .header {
+            width: 100%;
+            height: 110px;
+            background-color: white;
+            position: fixed;
+            top: 0;
+            z-index: 10;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 60px; /* Adjust font size as needed */
+            color: black; /* Header text color */
+        }
+        .audio-controls {
+            position: fixed; /* Position audio controls */
+            top: 3px; /* Place below header */
+            z-index: 11; /* Ensure they are above scrolling text */
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+        .audio-controls button {
+            background-color: #ddd; /* Light grey background */
+            border: none;
+            padding: 5px 10px;
+            margin: 5px;
+            cursor: pointer;
+        }
+        .scrolling-text {
+            position: absolute;
+            top: 70px; /* Adjusted to accommodate header and audio controls */
+            width: 60%;
+            font-size: 24px;
+            line-height: 1.5;
+            animation: scroll-up 40s linear infinite;
+            padding: 20px;
+            margin: 0 auto;
+        }
+        .scrolling-text img {
+            width: 40%;
+            height: auto;
+            margin-bottom: 10px;
+        }
+        @keyframes scroll-up {
+            -200% {
+                top: 100%;
+            }
+            100% {
+                top: -200%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        Gettysburg Address: November 19th, 1863
+    </div>
+    <div class="audio-controls">
+        <button id="audioOn">Audio On</button>
+        <button id="audioOff">Audio Off</button>
+    </div>
+    <div class="scrolling-text">
+        <img src="image.jpg" alt="Header Image">
+                <p>Four score and seven years ago our fathers brought forth, on this continent, a new nation, conceived in Liberty, and dedicated to the proposition that all men are created equal.</p>
+        <p>Now we are engaged in a great civil war, testing whether that nation, or any nation so conceived and so dedicated, can long endure. We are met on a great battle-field of that war. We have come to dedicate a portion of that field, as a final resting place for those who here gave their lives that that nation might live. It is altogether fitting and proper that we should do this.</p>
+        <p>But, in a larger sense, we can not dedicate... we can not consecrate... we can not hallow this ground. The brave men, living and dead, who struggled here, have consecrated it, far above our poor power to add or detract. The world will little note, nor long remember what we say here, but it can never forget what they did here. It is for us the living, rather, to be dedicated here to the unfinished work which they who fought here have thus far so nobly advanced. It is rather for us to be here dedicated to the great task remaining before us that from these honored dead we take increased devotion to that cause for which they gave the last full measure of devotion that we here highly resolve that these dead shall not have died in vain... that this nation, under God, shall have a new birth of freedom and that government of the people, by the people, for the people, shall not perish from the earth.</p>
+
+        <p>Abraham Lincoln<br>November 19, 1863</p>
+
+<p>On November 19, 1863, four months after the Battle of Gettysburg, a ceremony was held at the site in Pennsylvania to dedicate a cemetery for the Union dead. The battle had been a Union victory, but at great cost. About 23,000 Union casualties  and 23,000 Confederate (a total of nearly 8,000 killed, 27,000 wounded, and 11,000 missing). At the cemetery dedication in November 1863, the day’s speakers found themselves tasked with finding the right words to commemorate those who had perished in the bloodiest battle of the Civil War.</p>
+
+<p>&copy; 2025 GIGATECH. All rights reserved</p>
+        </div>
+
+    <audio id="backgroundAudio" src="lincoln.mp3" loop></audio>
+
+    <script>
+        const audio = document.getElementById('backgroundAudio');
+        const audioOnButton = document.getElementById('audioOn');
+        const audioOffButton = document.getElementById('audioOff');
+
+        audioOnButton.addEventListener('click', () => {
+            audio.play();
+        });
+
+        audioOffButton.addEventListener('click', () => {
+            audio.pause();
+        });
+
+    </script>
+</body>
+</html>
